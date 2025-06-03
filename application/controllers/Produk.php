@@ -51,7 +51,7 @@ class Produk extends CI_Controller {
 
                 if ($this->Produk_model->tambah_produk($data)) {
                     $this->session->set_flashdata('sukses', 'Produk berhasil ditambahkan!');
-                    redirect('produk');
+                    redirect('admin/produk');
                 } else {
                     $this->session->set_flashdata('error', 'Gagal menambahkan produk!');
                 }
@@ -105,7 +105,7 @@ class Produk extends CI_Controller {
 
                 if ($this->Produk_model->perbarui_produk($id, $data)) {
                     $this->session->set_flashdata('sukses', 'Produk berhasil diperbarui!');
-                    redirect('produk');
+                    redirect('admin/produk');
                 } else {
                     $this->session->set_flashdata('error', 'Gagal memperbarui produk!');
                 }
@@ -133,7 +133,7 @@ class Produk extends CI_Controller {
         } else {
             $this->session->set_flashdata('error', 'Gagal menghapus produk!');
         }
-        redirect('produk');
+        redirect('admin/produk');
     }
 
     private function cek_admin() {

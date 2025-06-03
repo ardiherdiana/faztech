@@ -1,4 +1,3 @@
-
 <?php
 // application/views/admin/produk/edit.php
 $this->load->view('templates/admin_header' );
@@ -9,7 +8,7 @@ $this->load->view('templates/admin_header' );
     <div class="p-6 border-b border-gray-200">
         <div class="flex justify-between items-center">
             <h3 class="text-xl font-semibold text-gray-800">Edit Produk: <?= $produk->nama_produk ?></h3>
-            <a href="<?= base_url('produk') ?>" 
+            <a href="<?= base_url('admin/produk') ?>" 
                class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors duration-200">
                 <i class="fas fa-arrow-left mr-2"></i>Kembali
             </a>
@@ -108,7 +107,7 @@ $this->load->view('templates/admin_header' );
             </div>
 
             <div class="flex justify-end space-x-4">
-                <a href="<?= base_url('produk') ?>" 
+                <a href="<?= base_url('admin/produk') ?>" 
                    class="bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition-colors duration-200">
                     Batal
                 </a>

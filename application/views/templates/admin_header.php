@@ -38,7 +38,7 @@
                     <i class="fas fa-tachometer-alt mr-3"></i>
                     Dashboard
                 </a>
-                <a href="<?= base_url('produk') ?>" class="flex items-center px-6 py-3 text-white hover:bg-secom-blue-light transition-colors duration-200 <?= $this->uri->segment(1) == 'produk' ? 'bg-secom-blue-light' : '' ?>">
+                <a href="<?= base_url('admin/produk') ?>" class="flex items-center px-6 py-3 text-white hover:bg-secom-blue-light transition-colors duration-200 <?= $this->uri->segment(1) == 'admin' && $this->uri->segment(2) == 'produk' ? 'bg-secom-blue-light' : '' ?>">
                     <i class="fas fa-box mr-3"></i>
                     Produk
                 </a>
@@ -51,6 +51,10 @@
                     Kontak
                 </a>
                 <div class="border-t border-secom-blue-light mt-6 pt-6">
+                    <a href="<?= base_url() ?>" class="flex items-center px-6 py-3 text-white hover:bg-green-600 transition-colors duration-200" target="_blank">
+                        <i class="fas fa-globe mr-3"></i>
+                        Lihat Website
+                    </a>
                     <a href="<?= base_url('auth/keluar') ?>" class="flex items-center px-6 py-3 text-white hover:bg-red-600 transition-colors duration-200" onclick="return confirm('Yakin ingin keluar?')">
                         <i class="fas fa-sign-out-alt mr-3"></i>
                         Keluar

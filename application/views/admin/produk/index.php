@@ -8,7 +8,7 @@ $this->load->view('templates/admin_header');
     <div class="p-6 border-b border-gray-200">
         <div class="flex justify-between items-center">
             <h3 class="text-xl font-semibold text-gray-800">Daftar Produk</h3>
-            <a href="<?= base_url('produk/tambah') ?>" 
+            <a href="<?= base_url('admin/produk/tambah') ?>" 
                class="bg-secom-blue-dark text-white px-4 py-2 rounded-lg hover:bg-secom-blue-light transition-colors duration-200">
                 <i class="fas fa-plus mr-2"></i>Tambah Produk
             </a>
@@ -62,11 +62,11 @@ $this->load->view('templates/admin_header');
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                 <div class="flex space-x-2">
-                                    <a href="<?= base_url('produk/edit/' . $item->id) ?>" 
-                                       class="bg-yellow-500 text-white px-3 py-1 rounded text-xs hover:bg-yellow-600 transition-colors duration-200">
+                                    <a href="<?= base_url('admin/produk/edit/' . $item->id) ?>"
+                                       class="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600 transition-colors duration-200 mr-2">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <button onclick="confirmDelete('<?= base_url('produk/hapus/' . $item->id) ?>')" 
+                                    <button onclick="confirmDelete('<?= base_url('admin/produk/hapus/' . $item->id) ?>')" 
                                             class="bg-red-500 text-white px-3 py-1 rounded text-xs hover:bg-red-600 transition-colors duration-200">
                                         <i class="fas fa-trash"></i>
                                     </button>
@@ -78,7 +78,7 @@ $this->load->view('templates/admin_header');
                     <tr>
                         <td colspan="6" class="px-6 py-12 text-center text-gray-500">
                             <i class="fas fa-box text-4xl mb-4 block"></i>
-                            Belum ada produk. <a href="<?= base_url('produk/tambah') ?>" class="text-secom-blue-dark hover:underline">Tambah produk pertama</a>
+                            Belum ada produk. <a href="<?= base_url('admin/produk/tambah') ?>" class="text-secom-blue-dark hover:underline">Tambah produk pertama</a>
                         </td>
                     </tr>
                 <?php endif; ?>

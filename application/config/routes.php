@@ -29,9 +29,10 @@ $route['beranda/detail_produk/(:num)'] = 'beranda/detail_produk/$1';
 $route['beranda/whatsapp_link'] = 'beranda/whatsapp_link';
 
 // CRUD Produk routes (spesifik dulu)
-$route['produk/tambah'] = 'produk/tambah';
-$route['produk/edit/(:num)'] = 'produk/edit/$1';
-$route['produk/hapus/(:num)'] = 'produk/hapus/$1';
+$route['admin/produk'] = 'produk';
+$route['admin/produk/tambah'] = 'produk/tambah';
+$route['admin/produk/edit/(:num)'] = 'produk/edit/$1';
+$route['admin/produk/hapus/(:num)'] = 'produk/hapus/$1';
 
 // CRUD Testimoni routes (spesifik dulu)
 $route['testimoni/tambah'] = 'testimoni/tambah';
