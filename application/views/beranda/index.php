@@ -335,46 +335,46 @@
                 <div class="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-gray-50 to-transparent z-10"></div>
 
                 <!-- Testimoni Container -->
-                <div class="overflow-hidden">
+                <div class="overflow-hidden pb-4">
                     <div class="testimoni-scroll flex space-x-8 items-stretch animate-testimoni-scroll">
                         <?php foreach ($testimoni_terbaru as $testimoni): ?>
                             <div class="flex-shrink-0 w-80">
-                                <div class="bg-white rounded-xl shadow-lg p-8 h-full flex flex-col">
+                                <div class="bg-white rounded-xl shadow-lg p-8 h-full flex flex-col hover:cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 hover:bg-gradient-to-br hover:from-white hover:to-primary/5 group">
                                     <!-- Quote Icon -->
-                                    <div class="text-primary/20 mb-4">
+                                    <div class="text-primary/20 group-hover:text-primary/30 mb-4 transition-all duration-300">
                                         <i class="ri-double-quotes-l ri-3x"></i>
                                     </div>
 
                                     <!-- Testimoni Text -->
-                                    <p class="text-gray-700 italic mb-6 flex-grow">"<?= $testimoni->deskripsi ?>"</p>
+                                    <p class="text-gray-700 group-hover:text-gray-800 italic mb-6 flex-grow transition-all duration-300">"<?= $testimoni->deskripsi ?>"</p>
 
                                     <!-- Rating -->
                                     <div class="flex items-center mb-4">
                                         <?php for ($i = 1; $i <= 5; $i++): ?>
                                             <?php if ($i <= $testimoni->rating): ?>
-                                                <i class="ri-star-fill text-yellow-400"></i>
+                                                <i class="ri-star-fill text-yellow-400 group-hover:text-yellow-500 transition-all duration-300 group-hover:scale-110"></i>
                                             <?php else: ?>
-                                                <i class="ri-star-line text-gray-300"></i>
+                                                <i class="ri-star-line text-gray-300 group-hover:text-gray-400 transition-all duration-300"></i>
                                             <?php endif; ?>
                                         <?php endfor; ?>
                                     </div>
 
                                     <!-- Author -->
                                     <div class="flex items-center">
-                                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4 group-hover:scale-110 transition-all duration-300 group-hover:shadow-lg">
                                             <?php if (!empty($testimoni->gambar)): ?>
                                                 <img src="<?= base_url('uploads/testimonials/' . $testimoni->gambar) ?>"
                                                     alt="<?= $testimoni->nama ?>"
-                                                    class="w-full h-full object-cover">
+                                                    class="w-full h-full object-cover group-hover:brightness-110 transition-all duration-300">
                                             <?php else: ?>
-                                                <div class="w-full h-full flex items-center justify-center bg-gray-200 rounded-full">
-                                                    <i class="ri-user-line text-gray-400"></i>
+                                                <div class="w-full h-full flex items-center justify-center bg-gray-200 rounded-full group-hover:bg-primary/10 transition-all duration-300">
+                                                    <i class="ri-user-line text-gray-400 group-hover:text-primary transition-all duration-300"></i>
                                                 </div>
                                             <?php endif; ?>
                                         </div>
                                         <div>
-                                            <h4 class="font-bold text-gray-900"><?= $testimoni->nama ?></h4>
-                                            <p class="text-sm text-gray-600"><?= $testimoni->jabatan ?></p>
+                                            <h4 class="font-bold text-gray-900 group-hover:text-primary transition-all duration-300"><?= $testimoni->nama ?></h4>
+                                            <p class="text-sm text-gray-600 group-hover:text-gray-700 transition-all duration-300"><?= $testimoni->jabatan ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -399,10 +399,10 @@
             <div class="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-white to-transparent z-10"></div>
 
             <!-- Scrolling container -->
-            <div class="overflow-hidden">
+            <div class="overflow-hidden pb-4">
                 <div class="logos-scroll flex space-x-16 items-center animate-scroll-infinite">
                     <!-- Logo 1 -->
-                    <div class="flex-shrink-0 w-36 h-20 flex items-center justify-center bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow group">
+                    <div class="flex-shrink-0 w-36 h-20 flex items-center justify-center bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow group cursor-pointer">
                         <img src="<?= base_url('assets/img/cli1.webp') ?>"
                             alt="Client 1"
                             class="max-w-28 max-h-14 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
@@ -413,7 +413,7 @@
                     </div>
 
                     <!-- Logo 2 -->
-                    <div class="flex-shrink-0 w-36 h-20 flex items-center justify-center bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow group">
+                    <div class="flex-shrink-0 w-36 h-20 flex items-center justify-center bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow group cursor-pointer">
                         <img src="<?= base_url('assets/img/cli1.webp') ?>"
                             alt="Client 2"
                             class="max-w-28 max-h-14 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
@@ -424,7 +424,7 @@
                     </div>
 
                     <!-- Logo 3 -->
-                    <div class="flex-shrink-0 w-36 h-20 flex items-center justify-center bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow group">
+                    <div class="flex-shrink-0 w-36 h-20 flex items-center justify-center bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow group cursor-pointer">
                         <img src="<?= base_url('assets/img/cli1.webp') ?>"
                             alt="Client 3"
                             class="max-w-28 max-h-14 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
@@ -435,7 +435,7 @@
                     </div>
 
                     <!-- Logo 4 -->
-                    <div class="flex-shrink-0 w-36 h-20 flex items-center justify-center bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow group">
+                    <div class="flex-shrink-0 w-36 h-20 flex items-center justify-center bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow group cursor-pointer">
                         <img src="<?= base_url('assets/img/cli1.webp') ?>"
                             alt="Client 4"
                             class="max-w-28 max-h-14 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
@@ -446,7 +446,7 @@
                     </div>
 
                     <!-- Logo 5 -->
-                    <div class="flex-shrink-0 w-36 h-20 flex items-center justify-center bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow group">
+                    <div class="flex-shrink-0 w-36 h-20 flex items-center justify-center bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow group cursor-pointer">
                         <img src="<?= base_url('assets/img/cli1.webp') ?>"
                             alt="Client 5"
                             class="max-w-28 max-h-14 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
@@ -457,7 +457,7 @@
                     </div>
 
                     <!-- Logo 6 -->
-                    <div class="flex-shrink-0 w-36 h-20 flex items-center justify-center bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow group">
+                    <div class="flex-shrink-0 w-36 h-20 flex items-center justify-center bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow group cursor-pointer">
                         <img src="<?= base_url('assets/img/cli1.webp') ?>"
                             alt="Client 6"
                             class="max-w-28 max-h-14 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
@@ -468,7 +468,7 @@
                     </div>
 
                     <!-- Logo 7 -->
-                    <div class="flex-shrink-0 w-36 h-20 flex items-center justify-center bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow group">
+                    <div class="flex-shrink-0 w-36 h-20 flex items-center justify-center bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow group cursor-pointer">
                         <img src="<?= base_url('assets/img/cli1.webp') ?>"
                             alt="Client 7"
                             class="max-w-28 max-h-14 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
@@ -479,7 +479,7 @@
                     </div>
 
                     <!-- Logo 8 -->
-                    <div class="flex-shrink-0 w-36 h-20 flex items-center justify-center bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow group">
+                    <div class="flex-shrink-0 w-36 h-20 flex items-center justify-center bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow group cursor-pointer">
                         <img src="<?= base_url('assets/img/cli1.webp') ?>"
                             alt="Client 8"
                             class="max-w-28 max-h-14 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
@@ -495,159 +495,161 @@
 </section>
 
 <!-- FAQ Section dengan Accordion -->
-<section id="faq" class="py-24 bg-white">
+<section id="kontak" class="py-24 bg-white">
     <div class="container mx-auto px-4">
         <div class="text-center mb-16" data-aos="fade-up">
-            <span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-3">FAQ</span>
-            <h2 class="text-4xl font-bold text-gray-900">Pertanyaan Umum</h2>
+            <span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-3">FAQ & KONTAK</span>
+            <h2 class="text-4xl font-bold text-gray-900">Pertanyaan Umum & Hubungi Kami</h2>
             <div class="w-24 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
-            <p class="text-gray-600 max-w-2xl mx-auto mt-4">Temukan jawaban atas pertanyaan yang sering diajukan tentang layanan keamanan kami</p>
+            <p class="text-gray-600 max-w-2xl mx-auto mt-4">Temukan jawaban atas pertanyaan yang sering diajukan atau hubungi kami langsung</p>
         </div>
 
-        <div class="max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-            <div class="space-y-4" id="accordionFaq">
-                <!-- FAQ Item 1 -->
-                <div class="border border-gray-200 rounded-xl overflow-hidden">
-                    <button class="w-full flex justify-between items-center p-5 text-left bg-white hover:bg-gray-50 transition-colors faq-button" data-target="faq1">
-                        <span class="font-bold text-gray-900">Berapa lama waktu instalasi sistem CCTV?</span>
-                        <i class="ri-arrow-down-s-line ri-lg text-primary transition-transform"></i>
-                    </button>
-                    <div class="bg-gray-50 px-5 overflow-hidden transition-all duration-300 max-h-0 faq-content" id="faq1">
-                        <div class="py-5 text-gray-700">
-                            Waktu instalasi bervariasi tergantung pada ukuran properti dan kompleksitas sistem. Untuk rumah kecil hingga menengah, instalasi biasanya memakan waktu 1-2 hari. Untuk bisnis atau properti yang lebih besar, mungkin memerlukan 2-5 hari. Tim kami akan memberikan estimasi waktu yang lebih akurat setelah survei lokasi.
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12" data-aos="fade-up" data-aos-delay="100">
+            <!-- FAQ Section - Left Column -->
+            <div>
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Pertanyaan yang Sering Diajukan</h3>
+                    <p class="text-gray-600">Berikut adalah jawaban untuk pertanyaan-pertanyaan umum tentang layanan keamanan kami</p>
+                </div>
+                
+                <div class="space-y-4" id="accordionFaq">
+                    <!-- FAQ Item 1 -->
+                    <div class="border border-gray-200 rounded-xl overflow-hidden">
+                        <button class="w-full flex justify-between items-center p-5 text-left bg-white hover:bg-gray-50 transition-colors faq-button" data-target="faq1">
+                            <span class="font-bold text-gray-900">Berapa lama waktu instalasi sistem CCTV?</span>
+                            <i class="ri-arrow-down-s-line ri-lg text-primary transition-transform"></i>
+                        </button>
+                        <div class="bg-gray-50 px-5 overflow-hidden transition-all duration-300 max-h-0 faq-content" id="faq1">
+                            <div class="py-5 text-gray-700">
+                                Waktu instalasi bervariasi tergantung pada ukuran properti dan kompleksitas sistem. Untuk rumah kecil hingga menengah, instalasi biasanya memakan waktu 1-2 hari. Untuk bisnis atau properti yang lebih besar, mungkin memerlukan 2-5 hari. Tim kami akan memberikan estimasi waktu yang lebih akurat setelah survei lokasi.
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- FAQ Item 2 -->
-                <div class="border border-gray-200 rounded-xl overflow-hidden">
-                    <button class="w-full flex justify-between items-center p-5 text-left bg-white hover:bg-gray-50 transition-colors faq-button" data-target="faq2">
-                        <span class="font-bold text-gray-900">Apakah sistem CCTV dapat diakses dari jarak jauh?</span>
-                        <i class="ri-arrow-down-s-line ri-lg text-primary transition-transform"></i>
-                    </button>
-                    <div class="bg-gray-50 px-5 overflow-hidden transition-all duration-300 max-h-0 faq-content" id="faq2">
-                        <div class="py-5 text-gray-700">
-                            Ya, semua sistem CCTV modern yang kami tawarkan dapat diakses dari jarak jauh melalui smartphone, tablet, atau komputer. Anda dapat memantau properti Anda kapan saja dan di mana saja melalui aplikasi khusus dengan koneksi internet. Fitur ini memungkinkan Anda untuk melihat feed langsung, memutar rekaman, dan menerima notifikasi ketika ada gerakan yang terdeteksi.
+                    <!-- FAQ Item 2 -->
+                    <div class="border border-gray-200 rounded-xl overflow-hidden">
+                        <button class="w-full flex justify-between items-center p-5 text-left bg-white hover:bg-gray-50 transition-colors faq-button" data-target="faq2">
+                            <span class="font-bold text-gray-900">Apakah sistem CCTV dapat diakses dari jarak jauh?</span>
+                            <i class="ri-arrow-down-s-line ri-lg text-primary transition-transform"></i>
+                        </button>
+                        <div class="bg-gray-50 px-5 overflow-hidden transition-all duration-300 max-h-0 faq-content" id="faq2">
+                            <div class="py-5 text-gray-700">
+                                Ya, semua sistem CCTV modern yang kami tawarkan dapat diakses dari jarak jauh melalui smartphone, tablet, atau komputer. Anda dapat memantau properti Anda kapan saja dan di mana saja melalui aplikasi khusus dengan koneksi internet. Fitur ini memungkinkan Anda untuk melihat feed langsung, memutar rekaman, dan menerima notifikasi ketika ada gerakan yang terdeteksi.
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- FAQ Item 3 -->
-                <div class="border border-gray-200 rounded-xl overflow-hidden">
-                    <button class="w-full flex justify-between items-center p-5 text-left bg-white hover:bg-gray-50 transition-colors faq-button" data-target="faq3">
-                        <span class="font-bold text-gray-900">Apa saja paket layanan maintenance yang tersedia?</span>
-                        <i class="ri-arrow-down-s-line ri-lg text-primary transition-transform"></i>
-                    </button>
-                    <div class="bg-gray-50 px-5 overflow-hidden transition-all duration-300 max-h-0 faq-content" id="faq3">
-                        <div class="py-5 text-gray-700">
-                            Kami menawarkan beberapa paket maintenance, mulai dari pemeriksaan rutin bulanan hingga paket premium dengan dukungan 24/7 dan waktu respons cepat. Paket dasar mencakup pemeriksaan perangkat keras, pembersihan kamera, dan pembaruan perangkat lunak. Paket yang lebih tinggi mencakup penggantian komponen, cadangan cloud, dan dukungan prioritas. Semua paket dapat disesuaikan dengan kebutuhan spesifik Anda.
+                    <!-- FAQ Item 3 -->
+                    <div class="border border-gray-200 rounded-xl overflow-hidden">
+                        <button class="w-full flex justify-between items-center p-5 text-left bg-white hover:bg-gray-50 transition-colors faq-button" data-target="faq3">
+                            <span class="font-bold text-gray-900">Apa saja paket layanan maintenance yang tersedia?</span>
+                            <i class="ri-arrow-down-s-line ri-lg text-primary transition-transform"></i>
+                        </button>
+                        <div class="bg-gray-50 px-5 overflow-hidden transition-all duration-300 max-h-0 faq-content" id="faq3">
+                            <div class="py-5 text-gray-700">
+                                Kami menawarkan beberapa paket maintenance, mulai dari pemeriksaan rutin bulanan hingga paket premium dengan dukungan 24/7 dan waktu respons cepat. Paket dasar mencakup pemeriksaan perangkat keras, pembersihan kamera, dan pembaruan perangkat lunak. Paket yang lebih tinggi mencakup penggantian komponen, cadangan cloud, dan dukungan prioritas. Semua paket dapat disesuaikan dengan kebutuhan spesifik Anda.
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- FAQ Item 4 -->
-                <div class="border border-gray-200 rounded-xl overflow-hidden">
-                    <button class="w-full flex justify-between items-center p-5 text-left bg-white hover:bg-gray-50 transition-colors faq-button" data-target="faq4">
-                        <span class="font-bold text-gray-900">Berapa lama rekaman CCTV dapat disimpan?</span>
-                        <i class="ri-arrow-down-s-line ri-lg text-primary transition-transform"></i>
-                    </button>
-                    <div class="bg-gray-50 px-5 overflow-hidden transition-all duration-300 max-h-0 faq-content" id="faq4">
-                        <div class="py-5 text-gray-700">
-                            Masa penyimpanan rekaman tergantung pada kapasitas hard drive DVR/NVR, jumlah kamera, resolusi rekaman, dan pengaturan rekaman (terus-menerus atau berdasarkan gerakan). Sistem standar biasanya dapat menyimpan rekaman 7-30 hari. Kami juga menawarkan solusi penyimpanan cloud yang dapat menyimpan rekaman lebih lama. Tim teknis kami dapat membantu Anda menentukan solusi penyimpanan terbaik berdasarkan kebutuhan Anda.
+                    <!-- FAQ Item 4 -->
+                    <div class="border border-gray-200 rounded-xl overflow-hidden">
+                        <button class="w-full flex justify-between items-center p-5 text-left bg-white hover:bg-gray-50 transition-colors faq-button" data-target="faq4">
+                            <span class="font-bold text-gray-900">Berapa lama rekaman CCTV dapat disimpan?</span>
+                            <i class="ri-arrow-down-s-line ri-lg text-primary transition-transform"></i>
+                        </button>
+                        <div class="bg-gray-50 px-5 overflow-hidden transition-all duration-300 max-h-0 faq-content" id="faq4">
+                            <div class="py-5 text-gray-700">
+                                Masa penyimpanan rekaman tergantung pada kapasitas hard drive DVR/NVR, jumlah kamera, resolusi rekaman, dan pengaturan rekaman (terus-menerus atau berdasarkan gerakan). Sistem standar biasanya dapat menyimpan rekaman 7-30 hari. Kami juga menawarkan solusi penyimpanan cloud yang dapat menyimpan rekaman lebih lama. Tim teknis kami dapat membantu Anda menentukan solusi penyimpanan terbaik berdasarkan kebutuhan Anda.
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- FAQ Item 5 -->
-                <div class="border border-gray-200 rounded-xl overflow-hidden">
-                    <button class="w-full flex justify-between items-center p-5 text-left bg-white hover:bg-gray-50 transition-colors faq-button" data-target="faq5">
-                        <span class="font-bold text-gray-900">Apakah sistem keamanan dapat diintegrasikan dengan smart home?</span>
-                        <i class="ri-arrow-down-s-line ri-lg text-primary transition-transform"></i>
-                    </button>
-                    <div class="bg-gray-50 px-5 overflow-hidden transition-all duration-300 max-h-0 faq-content" id="faq5">
-                        <div class="py-5 text-gray-700">
-                            Ya, banyak sistem keamanan modern kami yang dapat diintegrasikan dengan platform smart home seperti Google Home, Amazon Alexa, atau Apple HomeKit. Integrasi ini memungkinkan Anda mengontrol sistem keamanan dengan perintah suara, mengotomatiskan perangkat berdasarkan aktivitas keamanan, dan menciptakan pengalaman rumah pintar yang lebih terpadu. Konsultan kami dapat membantu Anda memilih sistem yang kompatibel dengan ekosistem smart home Anda.
+                    <!-- FAQ Item 5 -->
+                    <div class="border border-gray-200 rounded-xl overflow-hidden">
+                        <button class="w-full flex justify-between items-center p-5 text-left bg-white hover:bg-gray-50 transition-colors faq-button" data-target="faq5">
+                            <span class="font-bold text-gray-900">Apakah sistem keamanan dapat diintegrasikan dengan smart home?</span>
+                            <i class="ri-arrow-down-s-line ri-lg text-primary transition-transform"></i>
+                        </button>
+                        <div class="bg-gray-50 px-5 overflow-hidden transition-all duration-300 max-h-0 faq-content" id="faq5">
+                            <div class="py-5 text-gray-700">
+                                Ya, banyak sistem keamanan modern kami yang dapat diintegrasikan dengan platform smart home seperti Google Home, Amazon Alexa, atau Apple HomeKit. Integrasi ini memungkinkan Anda mengontrol sistem keamanan dengan perintah suara, mengotomatiskan perangkat berdasarkan aktivitas keamanan, dan menciptakan pengalaman rumah pintar yang lebih terpadu. Konsultan kami dapat membantu Anda memilih sistem yang kompatibel dengan ekosistem smart home Anda.
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
 
-<!-- Kontak Form Section -->
-<section id="kontak" class="py-24 bg-gradient-to-br from-gray-50 via-blue-50 to-gray-100">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-12" data-aos="fade-up">
-            <span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-3">Hubungi Kami</span>
-            <h2 class="text-4xl font-bold text-gray-900">Lindungi Lokasi Anda Sekarang!</h2>
-            <div class="w-24 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
-            <p class="text-gray-600 max-w-2xl mx-auto mt-4">Silahkan isi form di bawah ini, kami akan segera menghubungi Anda.</p>
-        </div>
+            <!-- Contact Form Section - Right Column -->
+            <div>
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Hubungi Kami Sekarang</h3>
+                    <p class="text-gray-600">Lindungi lokasi Anda sekarang! Silahkan isi form di bawah ini, kami akan segera menghubungi Anda.</p>
+                </div>
 
-        <div class="max-w-2xl mx-auto">
-            <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12" data-aos="fade-up" data-aos-delay="200">
-                <?= form_open('beranda/kirim_kontak', ['class' => 'space-y-6', 'id' => 'kontakForm']) ?>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label for="nama" class="block text-sm font-semibold text-gray-700 mb-2">Nama</label>
-                        <input type="text" id="nama" name="nama" required
-                            class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 bg-gray-50 hover:bg-white"
-                            placeholder="Masukkan nama Anda">
-                    </div>
+                <div class="bg-gradient-to-br from-gray-50 via-blue-50 to-gray-100 rounded-2xl shadow-xl p-8">
+                    <?= form_open('beranda/kirim_kontak', ['class' => 'space-y-6', 'id' => 'kontakForm']) ?>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="nama" class="block text-sm font-semibold text-gray-700 mb-2">Nama</label>
+                            <input type="text" id="nama" name="nama" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 bg-gray-50 hover:bg-white"
+                                placeholder="Masukkan nama Anda">
+                        </div>
 
-                    <div>
-                        <label for="telepon" class="block text-sm font-semibold text-gray-700 mb-2">Telepon</label>
-                        <div class="flex">
-                            <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-xl">+62</span>
-                            <input type="tel" id="telepon" name="telepon" required
-                                class="w-full px-4 py-3 border border-gray-300 rounded-r-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 bg-gray-50 hover:bg-white"
-                                placeholder="812345678">
+                        <div>
+                            <label for="telepon" class="block text-sm font-semibold text-gray-700 mb-2">Telepon</label>
+                            <div class="flex">
+                                <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-xl">+62</span>
+                                <input type="tel" id="telepon" name="telepon" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-r-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 bg-gray-50 hover:bg-white"
+                                    placeholder="812345678">
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
-                        <input type="email" id="email" name="email" required
-                            class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 bg-gray-50 hover:bg-white"
-                            placeholder="nama@email.com">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 bg-gray-50 hover:bg-white"
+                                placeholder="nama@email.com">
+                        </div>
+
+                        <div>
+                            <label for="jenis_properti" class="block text-sm font-semibold text-gray-700 mb-2">Jenis Properti</label>
+                            <select id="jenis_properti" name="jenis_properti" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 bg-gray-50 hover:bg-white">
+                                <option value="">-- Pilih Properti --</option>
+                                <option value="Rumah Tinggal">Rumah Tinggal</option>
+                                <option value="Apartemen">Apartemen</option>
+                                <option value="Kantor">Kantor</option>
+                                <option value="Toko/Ruko">Toko/Ruko</option>
+                                <option value="Gudang">Gudang</option>
+                                <option value="Pabrik">Pabrik</option>
+                                <option value="Lainnya">Lainnya</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div>
-                        <label for="jenis_properti" class="block text-sm font-semibold text-gray-700 mb-2">Jenis Properti</label>
-                        <select id="jenis_properti" name="jenis_properti" required
-                            class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 bg-gray-50 hover:bg-white">
-                            <option value="">-- Pilih Properti --</option>
-                            <option value="Rumah Tinggal">Rumah Tinggal</option>
-                            <option value="Apartemen">Apartemen</option>
-                            <option value="Kantor">Kantor</option>
-                            <option value="Toko/Ruko">Toko/Ruko</option>
-                            <option value="Gudang">Gudang</option>
-                            <option value="Pabrik">Pabrik</option>
-                            <option value="Lainnya">Lainnya</option>
-                        </select>
+                        <label for="catatan" class="block text-sm font-semibold text-gray-700 mb-2">Catatan</label>
+                        <textarea id="catatan" name="catatan" rows="4"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 bg-gray-50 hover:bg-white resize-none"
+                            placeholder="Ceritakan kebutuhan keamanan Anda, berapa titik CCTV yang diinginkan, atau pertanyaan lainnya..."></textarea>
                     </div>
-                </div>
 
-                <div>
-                    <label for="catatan" class="block text-sm font-semibold text-gray-700 mb-2">Catatan</label>
-                    <textarea id="catatan" name="catatan" rows="4"
-                        class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 bg-gray-50 hover:bg-white resize-none"
-                        placeholder="Ceritakan kebutuhan keamanan Anda, berapa titik CCTV yang diinginkan, atau pertanyaan lainnya..."></textarea>
-                </div>
+                    <div class="flex items-center justify-center">
+                        <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+                    </div>
 
-                <div class="flex items-center justify-center">
-                    <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+                    <button type="submit"
+                        class="w-full bg-primary text-white py-4 px-8 rounded-xl font-semibold text-lg hover:from-blue-600 hover:to-primary transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
+                        <i class="ri-send-plane-fill"></i>
+                        <span>Kirim Sekarang</span>
+                    </button>
+                    <?= form_close() ?>
                 </div>
-
-                <button type="submit"
-                    class="w-full bg-primary text-white py-4 px-8 rounded-xl font-semibold text-lg hover:from-blue-600 hover:to-primary transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
-                    <i class="ri-send-plane-fill"></i>
-                    <span>Kirim Sekarang</span>
-                </button>
-                <?= form_close() ?>
             </div>
         </div>
     </div>
