@@ -62,11 +62,6 @@ $this->load->view('templates/admin_header' );
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                 <div class="flex space-x-2">
-                                    <a href="<?= base_url('testimoni/detail/' . $item->id) ?>" 
-                                       class="bg-secom-blue-light text-white px-3 py-1 rounded text-xs hover:bg-secom-blue-dark transition-colors duration-200" 
-                                       title="Lihat Detail">
-                                        <i class="fas fa-eye"></i>
-                                    </a>
                                     <a href="<?= base_url('testimoni/edit/' . $item->id) ?>" 
                                        class="bg-yellow-500 text-white px-3 py-1 rounded text-xs hover:bg-yellow-600 transition-colors duration-200"
                                        title="Edit">

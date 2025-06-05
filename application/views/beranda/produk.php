@@ -70,11 +70,11 @@
 </section>
 
 <!-- Filter dan Pencarian Section -->
-<section class="py-8 bg-white border-b border-gray-200 sticky top-16 z-40 shadow-sm">
+<section class="py-8 bg-white border-b border-gray-200 sticky top-16 z-30 shadow-sm">
     <div class="container mx-auto px-4">
-        <form method="GET" action="<?= base_url('produk') ?>" class="flex flex-col md:flex-row gap-4 items-center justify-between">
-            <!-- Search Bar -->
-            <div class="flex-1 max-w-md">
+        <form method="GET" action="<?= base_url('produk') ?>" class="flex flex-col md:flex-row gap-4 items-start md:items-center md:justify-between">
+            <!-- Search Bar - Full Width on Mobile, Fixed Width on Desktop -->
+            <div class="w-full md:flex-1 md:max-w-md">
                 <div class="relative">
                     <input type="text" name="search" 
                            value="<?= htmlspecialchars($kata_kunci) ?>"
@@ -83,13 +83,12 @@
                     <i class="ri-search-line absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
                 </div>
             </div>
-            
-            <!-- Filter Controls -->
-            <div class="flex flex-wrap gap-4 items-center">
+            <!-- Filter Controls - Stack on Mobile, Horizontal on Desktop -->
+            <div class="flex flex-col sm:flex-row md:flex-row gap-3 sm:gap-4 w-full md:w-auto md:flex-wrap md:items-center">
                 <!-- Kategori Filter -->
-                <div class="relative">
+                <div class="relative w-full sm:flex-1 md:w-auto">
                     <select name="kategori" 
-                            class="appearance-none bg-white border border-gray-300 rounded-xl px-4 py-3 pr-8 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 min-w-[150px]">
+                            class="appearance-none bg-white border border-gray-300 rounded-xl px-4 py-3 pr-8 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 w-full md:min-w-[150px]">
                         <option value="">Semua Kategori</option>
                         <?php foreach($kategori_produk as $kategori): ?>
                             <option value="<?= $kategori->kategori ?>" <?= ($kategori_terpilih == $kategori->kategori) ? 'selected' : '' ?>>
@@ -101,9 +100,9 @@
                 </div>
                 
                 <!-- Urutan Filter -->
-                <div class="relative">
+                <div class="relative w-full sm:flex-1 md:w-auto">
                     <select name="urutan" 
-                            class="appearance-none bg-white border border-gray-300 rounded-xl px-4 py-3 pr-8 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 min-w-[150px]">
+                            class="appearance-none bg-white border border-gray-300 rounded-xl px-4 py-3 pr-8 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all duration-200 w-full md:min-w-[150px]">
                         <option value="terbaru" <?= ($urutan_terpilih == 'terbaru') ? 'selected' : '' ?>>Terbaru</option>
                         <option value="terlama" <?= ($urutan_terpilih == 'terlama') ? 'selected' : '' ?>>Terlama</option>
                         <option value="nama_asc" <?= ($urutan_terpilih == 'nama_asc') ? 'selected' : '' ?>>Nama A-Z</option>
@@ -116,14 +115,14 @@
                 
                 <!-- Submit Button -->
                 <button type="submit" 
-                        class="bg-primary text-white px-6 py-3 rounded-xl hover:bg-primary/90 transition-all duration-200 font-medium flex items-center">
+                        class="bg-primary text-white px-6 py-3 rounded-xl hover:bg-primary/90 transition-all duration-200 font-medium flex items-center justify-center w-full sm:w-auto md:w-auto">
                     <i class="ri-search-line mr-2"></i>
                     Cari
                 </button>
                 
                 <!-- Reset Button -->
                 <a href="<?= base_url('produk') ?>" 
-                   class="border border-gray-300 text-gray-700 px-6 py-3 rounded-xl hover:bg-gray-50 transition-all duration-200 font-medium flex items-center">
+                   class="border border-gray-300 text-gray-700 px-6 py-3 rounded-xl hover:bg-gray-50 transition-all duration-200 font-medium flex items-center justify-center w-full sm:w-auto md:w-auto">
                     <i class="ri-refresh-line mr-2"></i>
                     Reset
                 </a>
@@ -131,8 +130,8 @@
         </form>
         
         <!-- Result Info -->
-        <div class="mt-4 flex justify-between items-center text-sm text-gray-600">
-            <div>
+        <div class="mt-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 text-sm text-gray-600">
+            <div class="flex flex-wrap items-center gap-2">
                 <?php if(!empty($kata_kunci) || !empty($kategori_terpilih)): ?>
                     <span>Menampilkan hasil untuk:</span>
                     <?php if(!empty($kata_kunci)): ?>
@@ -145,7 +144,7 @@
                     <span>Menampilkan semua produk</span>
                 <?php endif; ?>
             </div>
-            <div>
+            <div class="text-right sm:text-left">
                 <span class="font-medium"><?= $total_produk ?></span> produk ditemukan
             </div>
         </div>
@@ -173,53 +172,52 @@
             </div>
         <?php else: ?>
             <!-- Products Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
                 <?php foreach($produk as $index => $item): ?>
                     <div class="group bg-white rounded-xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" 
                          data-aos="fade-up" 
                          data-aos-delay="<?= 100 + ($index * 50) ?>">
-                        <div class="h-48 overflow-hidden relative">
+                        <div class="h-40 sm:h-48 overflow-hidden relative">
                             <?php if(!empty($item->gambar)): ?>
                                 <img src="<?= base_url('uploads/products/' . $item->gambar) ?>" 
                                      alt="<?= $item->nama_produk ?>" 
                                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                             <?php else: ?>
                                 <div class="w-full h-full flex items-center justify-center bg-gray-200">
-                                    <i class="ri-image-line ri-3x text-gray-400"></i>
+                                    <i class="ri-image-line text-2xl sm:ri-3x text-gray-400"></i>
                                 </div>
                             <?php endif; ?>
                             
                             <!-- Badge -->
-                            <div class="absolute top-3 left-3 bg-primary text-white text-xs font-bold uppercase px-2 py-1 rounded-md">
+                            <div class="absolute top-2 left-2 sm:top-3 sm:left-3 bg-primary text-white text-xs font-bold uppercase px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-md">
                                 <?= $item->kategori ?>
                             </div>
                             
                             <!-- Quick action overlay -->
                             <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <button class="bg-white text-primary p-2 rounded-full mx-2 hover:bg-primary hover:text-white transition-colors detail-btn"
+                                <button class="bg-white text-primary p-1.5 sm:p-2 rounded-full mx-1 sm:mx-2 hover:bg-primary hover:text-white transition-colors detail-btn"
                                       data-id="<?= $item->id ?>" title="Lihat Detail">
-                                    <i class="ri-eye-line ri-lg"></i>
+                                    <i class="ri-eye-line text-sm sm:ri-lg"></i>
                                 </button>
                                 <a href="<?= 'https://wa.me/6281234567890?text=' . urlencode('Halo admin, saya tertarik dengan produk: ' . $item->nama_produk) ?>" 
-                                   class="bg-white text-green-500 p-2 rounded-full mx-2 hover:bg-green-500 hover:text-white transition-colors"
+                                   class="bg-white text-green-500 p-1.5 sm:p-2 rounded-full mx-1 sm:mx-2 hover:bg-green-500 hover:text-white transition-colors"
                                    title="Beli via WhatsApp" target="_blank">
-                                    <i class="ri-whatsapp-line ri-lg"></i>
+                                    <i class="ri-whatsapp-line text-sm sm:ri-lg"></i>
                                 </a>
                             </div>
                         </div>
-                        <div class="p-6">
+                        <div class="p-3 sm:p-6">
                             <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors"><?= $item->nama_produk ?></h3>
+                                <h3 class="text-sm sm:text-lg font-bold text-gray-900 group-hover:text-primary transition-colors line-clamp-2"><?= $item->nama_produk ?></h3>
                                 <?php if($item->stok > 0): ?>
-                                    <span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded-full">Tersedia</span>
                                 <?php else: ?>
-                                    <span class="bg-red-100 text-red-700 text-xs px-2 py-1 rounded-full">Habis</span>
+                                    <span class="bg-red-100 text-red-700 text-xs px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-full shrink-0 ml-2">Habis</span>
                                 <?php endif; ?>
                             </div>
-                            <p class="text-gray-600 mb-4 text-sm line-clamp-2"><?= $item->deskripsi ?></p>
-                            <div class="flex justify-between items-center">
-                                <span class="font-bold text-xl text-primary">Rp <?= number_format($item->harga, 0, ',', '.') ?></span>
-                                <button class="text-sm px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition detail-btn"
+                            <p class="text-gray-600 mb-3 sm:mb-4 text-xs sm:text-sm line-clamp-2"><?= $item->deskripsi ?></p>
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
+                                <span class="font-bold text-sm sm:text-xl text-primary">Rp <?= number_format($item->harga, 0, ',', '.') ?></span>
+                                <button class="text-xs sm:text-sm px-3 sm:px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition detail-btn w-full sm:w-auto"
                                         data-id="<?= $item->id ?>">
                                     Detail
                                 </button>
@@ -282,13 +280,13 @@
 <div id="modalDetailProduk" class="fixed inset-0 flex items-center justify-center z-50 hidden">
     <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm" id="modalOverlay"></div>
     
-    <div class="bg-white rounded-2xl w-full max-w-4xl mx-4 relative z-10 overflow-hidden" id="modalContent">
+    <div class="bg-white rounded-2xl w-full max-w-4xl mx-4 relative z-10 overflow-hidden max-h-[90vh] flex flex-col" id="modalContent">
         <button class="absolute top-4 right-4 z-20 bg-white rounded-full p-2 shadow-md text-gray-600 hover:text-primary transition-colors" id="closeModal">
             <i class="ri-close-line ri-xl"></i>
         </button>
         
-        <div class="flex flex-col md:flex-row">
-            <div class="w-full md:w-1/2 bg-gray-100 p-6 md:p-8 relative">
+        <div class="flex flex-col md:flex-row overflow-hidden flex-1">
+            <div class="w-full md:w-1/2 bg-gray-100 p-6 md:p-8 relative flex-shrink-0">
                 <div id="produkGambarModal" class="w-full h-64 md:h-80 flex items-center justify-center">
                     <!-- Gambar produk akan ditampilkan di sini -->
                 </div>
@@ -299,9 +297,9 @@
                 </div>
             </div>
             
-            <div class="w-full md:w-1/2 p-6 md:p-8">
+            <div class="w-full md:w-1/2 p-6 md:p-8 overflow-y-auto flex-1">
                 <div class="h-full flex flex-col">
-                    <h3 id="produkNamaModal" class="text-2xl font-bold text-gray-900 mb-2"><!-- Nama produk --></h3>
+                    <h3 id="produkNamaModal" class="text-xl md:text-2xl font-bold text-gray-900 mb-2 pr-12 md:pr-0"><!-- Nama produk --></h3>
                     
                     <div class="flex items-center mb-4">
                         <div class="flex items-center">
@@ -314,21 +312,18 @@
                     </div>
                     
                     <div class="bg-gray-100 rounded-xl p-4 mb-6">
-                        <p class="text-3xl font-bold text-primary" id="produkHargaModal"><!-- Harga --></p>
+                        <p class="text-2xl md:text-3xl font-bold text-primary" id="produkHargaModal"><!-- Harga --></p>
                         <p class="text-xs text-gray-500 mt-1">Harga sudah termasuk pajak</p>
                     </div>
                     
                     <div class="mb-6 flex-grow">
                         <h4 class="text-lg font-medium mb-3">Deskripsi</h4>
-                        <div id="produkDeskripsiModal" class="text-gray-700 prose"><!-- Deskripsi --></div>
+                        <div id="produkDeskripsiModal" class="text-gray-700 prose text-sm md:text-base max-h-32 md:max-h-48 overflow-y-auto"><!-- Deskripsi --></div>
                     </div>
                     
-                    <div class="flex flex-col space-y-3">
+                    <div class="flex flex-col space-y-3 mt-auto">
                         <a href="#" id="produkBeliBtn" class="inline-block bg-primary text-white px-6 py-3 rounded-xl hover:bg-primary/90 transition text-center w-full font-medium">
-                            <i class="ri-shopping-cart-line mr-2"></i> Beli Sekarang
-                        </a>
-                        <a href="#" id="produkWhatsappBtn" class="inline-block bg-green-500 text-white px-6 py-3 rounded-xl hover:bg-green-600 transition text-center w-full font-medium">
-                            <i class="ri-whatsapp-line mr-2"></i> Tanya via WhatsApp
+                             Beli Sekarang
                         </a>
                     </div>
                 </div>
@@ -401,7 +396,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     
                     // WhatsApp button
                     const whatsappMessage = encodeURIComponent(`Halo admin, saya tertarik dengan produk: ${data.nama_produk} dengan harga Rp ${new Intl.NumberFormat('id-ID').format(data.harga)}`);
-                    document.getElementById('produkWhatsappBtn').href = `https://wa.me/6281234567890?text=${whatsappMessage}`;
                     document.getElementById('produkBeliBtn').href = `https://wa.me/6281234567890?text=${whatsappMessage}`;
                     
                     // Show modal
@@ -469,5 +463,24 @@ html {
 
 .prose::-webkit-scrollbar-thumb:hover {
     background: #a1a1a1;
+}
+
+/* Modal responsive improvements */
+#modalDetailProduk .prose {
+    scrollbar-width: thin;
+    scrollbar-color: #c1c1c1 #f1f1f1;
+}
+
+/* Ensure modal content doesn't exceed viewport on mobile */
+@media (max-width: 768px) {
+    #modalContent {
+        margin: 1rem;
+        max-height: calc(100vh - 2rem);
+    }
+    
+    /* Make description scrollable on mobile with longer max-height */
+    #produkDeskripsiModal {
+        max-height: 150px !important;
+    }
 }
 </style> 

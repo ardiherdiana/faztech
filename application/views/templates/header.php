@@ -163,11 +163,9 @@
                 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex items-center space-x-8">
-                    <a href="<?= base_url() ?>" class="text-gray-700 hover:text-primary font-medium transition-colors nav-link">Tentang</a>
+                    <a href="<?= base_url() ?>" class="text-gray-700 hover:text-primary font-medium transition-colors nav-link">Tentang Kami</a>
                     <a href="<?= base_url("produk") ?>" class="text-gray-700 hover:text-primary font-medium transition-colors nav-link">Produk</a>
-                    <a href="#testimoni" class="text-gray-700 hover:text-primary font-medium transition-colors nav-link">Testimoni</a>
-                    <a href="#faq" class="text-gray-700 hover:text-primary font-medium transition-colors nav-link">FAQ</a>
-                </nav>
+                    <a href="#testimoni" class="text-gray-700 hover:text-primary font-medium transition-colors nav-link">Testimoni</a></nav>
                 
                 <!-- Authentication Buttons -->
                 <div class="hidden md:flex items-center">
