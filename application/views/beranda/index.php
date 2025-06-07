@@ -335,7 +335,7 @@
                 <div class="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-gray-50 to-transparent z-10"></div>
 
                 <!-- Testimoni Container -->
-                <div class="overflow-hidden pb-4">
+                <div class="overflow-hidden p-8">
                     <div class="testimoni-scroll flex space-x-8 items-stretch animate-testimoni-scroll">
                         <?php foreach ($testimoni_terbaru as $testimoni): ?>
                             <div class="flex-shrink-0 w-80">

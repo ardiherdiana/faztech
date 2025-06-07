@@ -9,6 +9,7 @@ class Beranda extends CI_Controller {
         $this->load->model('Produk_model');
         $this->load->model('Testimoni_model');
         $this->load->model('Kontak_model');
+        $this->load->model('Portfolio_model');
     }
 
     public function index() {
@@ -180,4 +181,6 @@ class Beranda extends CI_Controller {
         
         redirect('beranda#kontak');
     }
+
+
 }

@@ -28,26 +28,37 @@ $route['beranda/cari_produk'] = 'beranda/cari_produk';
 $route['beranda/detail_produk/(:num)'] = 'beranda/detail_produk/$1';
 $route['beranda/whatsapp_link'] = 'beranda/whatsapp_link';
 
-// CRUD Produk routes (spesifik dulu)
-$route['admin/produk'] = 'produk';
+// Admin routes - Dashboard
+$route['admin'] = 'admin';
+
+// Admin routes - Produk
+$route['admin/produk'] = 'produk/admin';
 $route['admin/produk/tambah'] = 'produk/tambah';
 $route['admin/produk/edit/(:num)'] = 'produk/edit/$1';
 $route['admin/produk/hapus/(:num)'] = 'produk/hapus/$1';
 
-// CRUD Testimoni routes (spesifik dulu)
-$route['testimoni/tambah'] = 'testimoni/tambah';
-$route['testimoni/edit/(:num)'] = 'testimoni/edit/$1';
-$route['testimoni/detail/(:num)'] = 'testimoni/detail/$1';
-$route['testimoni/hapus/(:num)'] = 'testimoni/hapus/$1';
+// Admin routes - Testimoni
+$route['admin/testimoni'] = 'testimoni/admin';
+$route['admin/testimoni/tambah'] = 'testimoni/tambah';
+$route['admin/testimoni/edit/(:num)'] = 'testimoni/edit/$1';
+$route['admin/testimoni/detail/(:num)'] = 'testimoni/detail/$1';
+$route['admin/testimoni/hapus/(:num)'] = 'testimoni/hapus/$1';
 
-// CRUD Kontak routes (spesifik dulu)
-$route['kontak/detail/(:num)'] = 'kontak/detail/$1';
-$route['kontak/hapus/(:num)'] = 'kontak/hapus/$1';
+// Admin routes - Portfolio
+$route['admin/portfolio'] = 'portfolio/admin';
+$route['admin/portfolio/tambah'] = 'portfolio/tambah';
+$route['admin/portfolio/edit/(:num)'] = 'portfolio/edit/$1';
+$route['admin/portfolio/hapus/(:num)'] = 'portfolio/hapus/$1';
 
-// General routes (yang lebih umum di bawah)
+// Admin routes - Kontak
+$route['admin/kontak'] = 'kontak/admin';
+$route['admin/kontak/detail/(:num)'] = 'kontak/detail/$1';
+$route['admin/kontak/hapus/(:num)'] = 'kontak/hapus/$1';
+
+// Public routes
 $route['beranda'] = 'beranda';
-$route['admin'] = 'admin';
 $route['produk'] = 'beranda/produk';
+$route['portfolio'] = 'portfolio';
 $route['testimoni'] = 'testimoni';
 $route['kontak'] = 'kontak';
 

@@ -42,11 +42,15 @@
                     <i class="fas fa-box mr-3"></i>
                     Produk
                 </a>
-                <a href="<?= base_url('testimoni') ?>" class="flex items-center px-6 py-3 text-white hover:bg-secom-blue-light transition-colors duration-200 <?= $this->uri->segment(1) == 'testimoni' ? 'bg-secom-blue-light' : '' ?>">
+                <a href="<?= base_url('admin/testimoni') ?>" class="flex items-center px-6 py-3 text-white hover:bg-secom-blue-light transition-colors duration-200 <?= $this->uri->segment(1) == 'admin' && $this->uri->segment(2) == 'testimoni' ? 'bg-secom-blue-light' : '' ?>">
                     <i class="fas fa-star mr-3"></i>
                     Testimoni
                 </a>
-                <a href="<?= base_url('kontak') ?>" class="flex items-center px-6 py-3 text-white hover:bg-secom-blue-light transition-colors duration-200 <?= $this->uri->segment(1) == 'kontak' ? 'bg-secom-blue-light' : '' ?>">
+                <a href="<?= base_url('admin/portfolio') ?>" class="flex items-center px-6 py-3 text-white hover:bg-secom-blue-light transition-colors duration-200 <?= $this->uri->segment(1) == 'admin' && $this->uri->segment(2) == 'portfolio' ? 'bg-secom-blue-light' : '' ?>">
+                    <i class="fas fa-briefcase mr-3"></i>
+                    Portfolio
+                </a>
+                <a href="<?= base_url('admin/kontak') ?>" class="flex items-center px-6 py-3 text-white hover:bg-secom-blue-light transition-colors duration-200 <?= $this->uri->segment(1) == 'admin' && $this->uri->segment(2) == 'kontak' ? 'bg-secom-blue-light' : '' ?>">
                     <i class="fas fa-envelope mr-3"></i>
                     Kontak
                 </a>

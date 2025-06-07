@@ -10,6 +10,11 @@ class Kontak extends CI_Controller {
     }
 
     public function index() {
+        // Redirect to admin if accessing directly
+        redirect('admin/kontak');
+    }
+
+    public function admin() {
         $data['judul'] = 'Kelola Kontak - Admin';
         $data['kontak'] = $this->Kontak_model->ambil_semua_kontak();
         
@@ -22,7 +27,7 @@ class Kontak extends CI_Controller {
         
         if (!$data['kontak']) {
             $this->session->set_flashdata('error', 'Kontak tidak ditemukan!');
-            redirect('kontak');
+            redirect('admin/kontak');
         }
         
         $this->load->view('admin/kontak/detail', $data);
@@ -33,7 +38,7 @@ class Kontak extends CI_Controller {
         
         if (!$kontak) {
             $this->session->set_flashdata('error', 'Kontak tidak ditemukan!');
-            redirect('kontak');
+            redirect('admin/kontak');
         }
 
         if ($this->Kontak_model->hapus_kontak($id)) {
@@ -41,7 +46,7 @@ class Kontak extends CI_Controller {
         } else {
             $this->session->set_flashdata('error', 'Gagal menghapus kontak!');
         }
-        redirect('kontak');
+        redirect('admin/kontak');
     }
 
     private function cek_admin() {

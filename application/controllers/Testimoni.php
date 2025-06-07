@@ -6,11 +6,25 @@ class Testimoni extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->cek_admin();
         $this->load->model('Testimoni_model');
     }
 
     public function index() {
+        // Public testimoni page
+        $data['judul'] = 'Testimoni - FazTech';
+        $data['testimoni'] = $this->Testimoni_model->ambil_semua_testimoni();
+        $data['total_testimoni'] = $this->Testimoni_model->hitung_total_testimoni();
+        
+        // Status login user
+        $data['sudah_login'] = $this->session->userdata('login') ? true : false;
+        $data['nama_pengguna'] = $this->session->userdata('nama_lengkap');
+        $data['peran_pengguna'] = $this->session->userdata('peran');
+        
+        $this->load->view('beranda/testimoni', $data);
+    }
+
+    public function admin() {
+        $this->cek_admin();
         $data['judul'] = 'Kelola Testimoni - Admin';
         $data['testimoni'] = $this->Testimoni_model->ambil_semua_testimoni();
         
@@ -18,6 +32,7 @@ class Testimoni extends CI_Controller {
     }
 
     public function tambah() {
+        $this->cek_admin();
         if ($this->input->post()) {
             $this->form_validation->set_rules('nama', 'Nama', 'required|min_length[3]');
             $this->form_validation->set_rules('jabatan', 'Jabatan', 'required|min_length[3]');
@@ -60,7 +75,7 @@ class Testimoni extends CI_Controller {
 
                 if ($this->Testimoni_model->tambah_testimoni($data)) {
                     $this->session->set_flashdata('sukses', 'Testimoni berhasil ditambahkan!');
-                    redirect('testimoni');
+                    redirect('admin/testimoni');
                 } else {
                     $this->session->set_flashdata('error', 'Gagal menambahkan testimoni!');
                 }
@@ -72,6 +87,7 @@ class Testimoni extends CI_Controller {
     }
 
     public function edit($id) {
+        $this->cek_admin();
         $testimoni = $this->Testimoni_model->ambil_testimoni_berdasarkan_id($id);
         if (!$testimoni) {
             show_404();
@@ -125,7 +141,7 @@ class Testimoni extends CI_Controller {
 
                 if ($this->Testimoni_model->perbarui_testimoni($id, $data)) {
                     $this->session->set_flashdata('sukses', 'Testimoni berhasil diperbarui!');
-                    redirect('testimoni');
+                    redirect('admin/testimoni');
                 } else {
                     $this->session->set_flashdata('error', 'Gagal memperbarui testimoni!');
                 }
@@ -138,6 +154,7 @@ class Testimoni extends CI_Controller {
     }
 
     public function hapus($id) {
+        $this->cek_admin();
         $testimoni = $this->Testimoni_model->ambil_testimoni_berdasarkan_id($id);
         if (!$testimoni) {
             $this->session->set_flashdata('error', 'Testimoni tidak ditemukan!');
@@ -155,7 +172,7 @@ class Testimoni extends CI_Controller {
         } else {
             $this->session->set_flashdata('error', 'Gagal menghapus testimoni!');
         }
-        redirect('testimoni');
+        redirect('admin/testimoni');
     }
 
     public function detail($id) {
