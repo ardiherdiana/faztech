@@ -281,6 +281,15 @@
     <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm" id="modalOverlay"></div>
     
     <div class="bg-white rounded-2xl w-full max-w-4xl mx-4 relative z-10 overflow-hidden max-h-[90vh] flex flex-col" id="modalContent">
+        <!-- Loading State for Modal -->
+        <div id="modalLoading" class="absolute inset-0 bg-white flex items-center justify-center z-50 hidden">
+            <div class="loading-pulse">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
         <button class="absolute top-4 right-4 z-20 bg-white rounded-full p-2 shadow-md text-gray-600 hover:text-primary transition-colors" id="closeModal">
             <i class="ri-close-line ri-xl"></i>
         </button>
@@ -355,12 +364,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalOverlay = document.getElementById('modalOverlay');
     const closeModal = document.getElementById('closeModal');
     const detailButtons = document.querySelectorAll('.detail-btn');
+    const modalLoading = document.getElementById('modalLoading');
 
-    // Open modal
+    // Open modal with loading state
     detailButtons.forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
             const produkId = this.getAttribute('data-id');
+            
+            // Show modal with loading state
+            modal.classList.remove('hidden');
+            modalLoading.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
             
             // Fetch product details via AJAX
             fetch(`<?= base_url('beranda/detail_produk/') ?>${produkId}`)
@@ -368,8 +383,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 .then(data => {
                     if (data.error) {
                         alert('Produk tidak ditemukan');
+                        closeModalFunction();
                         return;
                     }
+                    
+                    // Hide loading after data is loaded
+                    modalLoading.classList.add('hidden');
                     
                     // Populate modal with product data
                     document.getElementById('produkNamaModal').textContent = data.nama_produk;
@@ -397,14 +416,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     // WhatsApp button
                     const whatsappMessage = encodeURIComponent(`Halo admin, saya tertarik dengan produk: ${data.nama_produk} dengan harga Rp ${new Intl.NumberFormat('id-ID').format(data.harga)}`);
                     document.getElementById('produkBeliBtn').href = `https://wa.me/6281234567890?text=${whatsappMessage}`;
-                    
-                    // Show modal
-                    modal.classList.remove('hidden');
-                    document.body.style.overflow = 'hidden';
                 })
                 .catch(error => {
                     console.error('Error:', error);
                     alert('Terjadi kesalahan saat memuat detail produk');
+                    closeModalFunction();
                 });
         });
     });
@@ -423,6 +439,22 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
             closeModalFunction();
         }
+    });
+
+    // Add loading state for form submission
+    const filterForm = document.querySelector('form[action="<?= base_url('produk') ?>"]');
+    if (filterForm) {
+        filterForm.addEventListener('submit', function() {
+            showLoading();
+        });
+    }
+
+    // Add loading state for pagination links
+    const paginationLinks = document.querySelectorAll('.pagination a');
+    paginationLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            showLoading();
+        });
     });
 });
 </script>
@@ -481,6 +513,48 @@ html {
     /* Make description scrollable on mobile with longer max-height */
     #produkDeskripsiModal {
         max-height: 150px !important;
+    }
+}
+
+/* Modal loading state styles */
+#modalLoading {
+    transition: opacity 0.3s ease-out;
+}
+
+#modalLoading.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Add skeleton loading for product cards */
+.product-skeleton {
+    background: #fff;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-skeleton::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0,
+        rgba(255, 255, 255, 0.2) 20%,
+        rgba(255, 255, 255, 0.5) 60%,
+        rgba(255, 255, 255, 0)
+    );
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
     }
 }
 </style> 

@@ -44,11 +44,11 @@ $route['admin/testimoni/edit/(:num)'] = 'testimoni/edit/$1';
 $route['admin/testimoni/detail/(:num)'] = 'testimoni/detail/$1';
 $route['admin/testimoni/hapus/(:num)'] = 'testimoni/hapus/$1';
 
-// Admin routes - Portfolio
-$route['admin/portfolio'] = 'portfolio/admin';
-$route['admin/portfolio/tambah'] = 'portfolio/tambah';
-$route['admin/portfolio/edit/(:num)'] = 'portfolio/edit/$1';
-$route['admin/portfolio/hapus/(:num)'] = 'portfolio/hapus/$1';
+// Admin routes - Pekerjaan
+$route['admin/pekerjaan'] = 'pekerjaan/admin';
+$route['admin/pekerjaan/tambah'] = 'pekerjaan/tambah';
+$route['admin/pekerjaan/edit/(:num)'] = 'pekerjaan/edit/$1';
+$route['admin/pekerjaan/hapus/(:num)'] = 'pekerjaan/hapus/$1';
 
 // Admin routes - Kontak
 $route['admin/kontak'] = 'kontak/admin';
@@ -58,7 +58,7 @@ $route['admin/kontak/hapus/(:num)'] = 'kontak/hapus/$1';
 // Public routes
 $route['beranda'] = 'beranda';
 $route['produk'] = 'beranda/produk';
-$route['portfolio'] = 'portfolio';
+$route['pekerjaan'] = 'pekerjaan';
 $route['testimoni'] = 'testimoni';
 $route['kontak'] = 'kontak';
 

@@ -184,7 +184,7 @@
                     <a href="<?= base_url() ?>" class="text-gray-700 hover:text-primary font-medium transition-colors nav-link">Tentang Kami</a>
                     <a href="<?= base_url("produk") ?>" class="text-gray-700 hover:text-primary font-medium transition-colors nav-link">Produk</a>
                     <a href="<?= base_url("testimoni") ?>" class="text-gray-700 hover:text-primary font-medium transition-colors nav-link">Testimoni</a>
-                    <a href="<?= base_url("portfolio") ?>" class="text-gray-700 hover:text-primary font-medium transition-colors nav-link">Portfolio</a>
+                    <a href="<?= base_url("pekerjaan") ?>" class="text-gray-700 hover:text-primary font-medium transition-colors nav-link">Pekerjaan</a>
                 </nav>
 
                 <!-- Authentication Buttons -->
@@ -237,12 +237,10 @@
         <!-- Mobile menu (hidden by default) -->
         <div class="md:hidden hidden bg-white shadow-lg rounded-b-xl mx-4 overflow-hidden transition-all duration-300" id="mobileMenu">
             <nav class="flex flex-col px-4 py-2">
+                <a href="<?= base_url() ?>" class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 nav-link">Tentang Kami</a>
                 <a href="<?= base_url("produk") ?>" class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 nav-link">Produk</a>
-                                        <a href="<?= base_url("portfolio") ?>" class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 nav-link">Portfolio</a>
-                <a href="#tentang" class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 nav-link">Tentang</a>
                 <a href="<?= base_url("testimoni") ?>" class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 nav-link">Testimoni</a>
-                <a href="#faq" class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 nav-link">FAQ</a>
-
+                <a href="<?= base_url("pekerjaan") ?>" class="text-gray-700 hover:text-primary py-3 border-b border-gray-100 nav-link">Pekerjaan</a>
                 <?php if ($sudah_login): ?>
                     <div class="py-3 border-b border-gray-100">
                         <div class="flex items-center mb-2">
