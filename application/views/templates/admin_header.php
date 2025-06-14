@@ -3,6 +3,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,16 +24,18 @@
     </script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
+
 <body class="bg-gray-100">
     <div class="flex min-h-screen">
         <!-- Sidebar -->
         <aside class="w-64 bg-secom-blue-dark text-white shadow-lg fixed h-screen">
             <div class="p-6 border-b border-secom-blue-light">
-                <h1 class="text-xl font-bold text-white">
-                    <i class="fas fa-shield-alt mr-2"></i>FazTech Admin
-                </h1>
+                <span class="text-white">
+                    <i class="fas fa-user-circle mr-2"></i>
+                    <?= $this->session->userdata('nama_lengkap') ?>
+                </span>
             </div>
-            
+
             <nav class="mt-6">
                 <a href="<?= base_url('admin') ?>" class="flex items-center px-6 py-3 text-white hover:bg-secom-blue-light transition-colors duration-200 <?= $this->uri->segment(1) == 'admin' && $this->uri->segment(2) == '' ? 'bg-secom-blue-light' : '' ?>">
                     <i class="fas fa-tachometer-alt mr-3"></i>
@@ -73,12 +76,7 @@
             <header class="bg-white shadow-sm border-b border-gray-200">
                 <div class="px-6 py-4 flex justify-between items-center">
                     <h2 class="text-xl font-semibold text-gray-800"><?= isset($judul) ? str_replace(' - Admin', '', $judul) : 'Dashboard' ?></h2>
-                    <div class="flex items-center space-x-4">
-                        <span class="text-gray-600">
-                            <i class="fas fa-user-circle mr-2"></i>
-                            <?= $this->session->userdata('nama_lengkap') ?>
-                        </span>
-                    </div>
+
                 </div>
             </header>
 
@@ -89,7 +87,7 @@
                         <i class="fas fa-check-circle mr-2"></i><?= $this->session->flashdata('sukses') ?>
                     </div>
                 <?php endif; ?>
-                
+
                 <?php if ($this->session->flashdata('error')): ?>
                     <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
                         <i class="fas fa-exclamation-circle mr-2"></i><?= $this->session->flashdata('error') ?>

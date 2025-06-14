@@ -88,7 +88,7 @@
                                 <i class="ri-phone-line"></i>
                             </div>
                             <div>
-                                <p class="text-white font-medium">+62 21 1234 5678</p>
+                                <p class="text-white font-medium">085694743168</p>
                                 <p class="text-gray-500 text-sm">Senin - Jumat, 08:00 - 17:00</p>
                             </div>
                         </div>
@@ -128,7 +128,7 @@
     </footer>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20FazTech,%20saya%20ingin%20bertanya%20tentang%20layanan%20keamanan" 
+    <a href="https://wa.me/6285694743168?text=Halo%20Admin%20FazTech,%20saya%20ingin%20bertanya%20tentang%20layanan%20keamanan" 
        class="fixed bottom-6 right-6 w-16 h-16 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-all duration-300 z-40">
         <i class="ri-whatsapp-line ri-xl text-white"></i>
         <span class="absolute top-0 right-0 w-4 h-4 bg-red-500 rounded-full border-2 border-white"></span>

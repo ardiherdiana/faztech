@@ -168,14 +168,11 @@
                 <!-- Logo -->
                 <a href="<?= base_url() ?>" class="flex items-center">
                     <div class="relative">
-                        <div class="absolute inset-0 bg-primary rounded-full opacity-20 blur-sm"></div>
-                        <div class="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center relative">
-                            <i class="ri-shield-check-fill text-white"></i>
-                        </div>
+                        <img src="<?= base_url('assets/img/faztech.png') ?>" alt="FazTech Logo" class="w-10 h-10">
+
                     </div>
                     <div class="ml-3">
-                        <span class="font-display font-bold text-xl text-gray-900">FazTech</span>
-                        <span class="text-primary ml-1 font-bold">Security</span>
+                        <span class="text-primary font-display font-bold text-xl text-gray-900">FazTech</span>
                     </div>
                 </a>
 

@@ -22,3 +22,6 @@ RewriteRule ^(.*)$ /index.php?/$1 [L]
     Header always set X-Frame-Options DENY
     Header always set X-XSS-Protection "1; mode=block"
 </IfModule>
+
+php_value output_buffering On
+php_value output_handler ob_gzhandler

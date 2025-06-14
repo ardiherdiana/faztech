@@ -27,10 +27,9 @@
     <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
         <!-- Logo/Header -->
         <div class="text-center mb-8">
-            <div class="inline-flex items-center justify-center w-16 h-16 bg-secom-blue-dark rounded-full mb-4">
-                <i class="fas fa-shield-alt text-2xl text-white"></i>
+            <div class="inline-flex items-center justify-center mb-4">
+                <img src="<?= base_url('assets/img/faztech.png') ?>" alt="FazTech Logo" class="h-16 w-auto">
             </div>
-            <h1 class="text-3xl font-bold text-secom-blue-dark">FazTech</h1>
             <p class="text-gray-600 mt-2">Masuk ke akun Anda</p>
         </div>
 

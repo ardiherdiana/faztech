@@ -44,10 +44,9 @@
         <div class="max-w-xl text-white">
             <div data-aos="fade-up" data-aos-duration="800">
                 <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                    Inovasi Keamanan <span class="text-primary">Masa Depan</span> Bersama Faztech
-                </h1>
+                    Inovasi Keamanan yang <span class="text-primary">Terpercaya</span> untuk bisnis modern </h1>
                 <p class="text-lg text-gray-300 mb-8 max-w-lg">
-                    Faztech menghadirkan sistem pengawasan canggih dengan dukungan teknologi AI dan perangkat terbaik dari mitra terpercaya seperti Hikvision.
+                    Kami hadir sebagai mitra terpercaya dalam menyediakan solusi keamanan modern seperti CCTV, Barrier Gate, Fiber Optic, HDD, dan Access Control. Dari rumah tinggal hingga fasilitas industri, Produk Yang kami berikan original dan bergaransi resmi
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <a href="<?= base_url('produk') ?>"
@@ -85,7 +84,7 @@
         <!-- Header -->
         <div class="text-center mb-16" data-aos="fade-up">
             <span class="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-3">LAYANAN KAMI</span>
-            <h2 class="text-4xl font-bold text-gray-900">Solusi Keamanan <span class="text-primary">Terbaik</span></h2>
+            <h2 class="text-4xl font-bold text-gray-900">Mengapa Memilih <span class="text-primary">Kami?</span></h2>
             <div class="w-24 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
             <p class="text-gray-600 max-w-2xl mx-auto mt-4">Dari konsultasi hingga maintenance, kami menyediakan layanan lengkap untuk semua kebutuhan keamanan Anda</p>
         </div>
@@ -115,19 +114,19 @@
             <!-- Service 3: Monitoring -->
             <div class="group bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100" data-aos="fade-up" data-aos-delay="300">
                 <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <i class="ri-eye-line text-2xl text-white"></i>
+                    <i class="ri-shield-check-line text-2xl text-white"></i>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">Monitoring 24/7</h3>
-                <p class="text-gray-600 mb-4">Sistem pemantauan profesional yang aktif 24 jam untuk memastikan keamanan properti Anda terjaga setiap saat.</p>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Produk Berkualitas dan Bergaransi resmi</h3>
+                <p class="text-gray-600 mb-4">Kami menghadirkan produk CCTV dengan teknologi terbaru, kualitas terjamin, dan garansi resmi,memberikan Anda rasa aman jangka panjang.</p>
             </div>
 
             <!-- Service 4: Maintenance -->
             <div class="group bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100" data-aos="fade-up" data-aos-delay="400">
                 <div class="w-16 h-16 bg-gradient-to-br from-secondary to-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <i class="ri-settings-3-line text-2xl text-white"></i>
+                    <i class="ri-money-dollar-circle-line text-2xl text-white"></i>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">Maintenance Rutin</h3>
-                <p class="text-gray-600 mb-4">Perawatan berkala untuk menjaga performa optimal sistem keamanan dan memperpanjang usia perangkat.</p>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Harga Terjangkau</h3>
+                <p class="text-gray-600 mb-4">Kami percaya bahwa sistem keamanan yang handal tidak harus mahal. FazTech menghadirkan produk-produk berkualitas tinggi dengan teknologi terkini yang dirancang untuk memberikan perlindungan maksimal tanpa membebani anggaran Anda.</p>
             </div>
 
             <!-- Service 5: Upgrade -->
@@ -135,18 +134,18 @@
                 <div class="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     <i class="ri-arrow-up-circle-line text-2xl text-white"></i>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">System Upgrade</h3>
-                <p class="text-gray-600 mb-4">Peningkatan sistem dengan teknologi terbaru untuk mengikuti perkembangan zaman dan meningkatkan keamanan.</p>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Inovasi Teknologi terbaru</h3>
+                <p class="text-gray-600 mb-4">Kami selalu menghadirkan solusi CCTV dengan teknologi terkini yang dirancang untuk memenuhi kebutuhan keamanan baik untuk rumah maupun Bisnis.Setiap produk kami dilengkapi fitur-fitur modern yang mudah digunakan, efisien, dan dapat diandalkan
+                </p>
             </div>
 
-            <!-- Service 6: Support -->
-            <div class="group bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100" data-aos="fade-up" data-aos-delay="600">
+            <!-- Service 6: Layanan Cepat -->
+            <div class="group bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100" data-aos="fade-up" data-aos-delay="400">
                 <div class="w-16 h-16 bg-gradient-to-br from-secondary to-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <i class="ri-customer-service-2-line text-2xl text-white"></i>
+                    <i class="ri-timer-flash-line text-2xl text-white"></i>
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-3">Technical Support</h3>
-                <p class="text-gray-600 mb-4">Dukungan teknis profesional siap membantu mengatasi masalah dan pertanyaan terkait sistem keamanan Anda.</p>
-
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Layanan Cepat</h3>
+                <p class="text-gray-600 mb-4">Waktu Anda sangat berharga, dan kami memahaminya. Itulah mengapa setiap permintaan dan kendala Anda akan ditangani dengan respon cepat, pelayanan yang sigap, dan pengerjaan yang rapi.</p>
             </div>
         </div>
 
@@ -202,7 +201,7 @@
                                     data-id="<?= $produk->id ?>" title="Lihat Detail">
                                     <i class="ri-eye-line ri-lg"></i>
                                 </button>
-                                <a href="<?= 'https://wa.me/6281234567890?text=' . urlencode('Halo admin, saya tertarik dengan produk: ' . $produk->nama_produk) ?>"
+                                <a href="<?= 'https://wa.me/6285694743168?text=' . urlencode('Halo admin, saya tertarik dengan produk: ' . $produk->nama_produk) ?>"
                                     class="bg-white text-green-500 p-2 rounded-full mx-2 hover:bg-green-500 hover:text-white transition-colors"
                                     title="Beli via WhatsApp" target="_blank">
                                     <i class="ri-whatsapp-line ri-lg"></i>
@@ -511,7 +510,7 @@
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Pertanyaan yang Sering Diajukan</h3>
                     <p class="text-gray-600">Berikut adalah jawaban untuk pertanyaan-pertanyaan umum tentang layanan keamanan kami</p>
                 </div>
-                
+
                 <div class="space-y-4" id="accordionFaq">
                     <!-- FAQ Item 1 -->
                     <div class="border border-gray-200 rounded-xl overflow-hidden">
@@ -701,11 +700,8 @@
                     </div>
 
                     <div class="flex flex-col space-y-3">
-                        <a href="#" id="produkBeliBtn" class="inline-block bg-primary text-white px-6 py-3 rounded-xl hover:bg-primary/90 transition text-center w-full font-medium">
-                            <i class="ri-shopping-cart-line mr-2"></i> Beli Sekarang
-                        </a>
-                        <a href="#" id="produkWhatsappBtn" class="inline-block bg-green-500 text-white px-6 py-3 rounded-xl hover:bg-green-600 transition text-center w-full font-medium">
-                            <i class="ri-whatsapp-line mr-2"></i> Tanya via WhatsApp
+                        <a href="#" id="produkBeliBtn" class="inline-block bg-green-500 text-white px-6 py-3 rounded-xl hover:bg-green-600 transition text-center w-full font-medium">
+                            Order Now
                         </a>
                     </div>
                 </div>
@@ -858,8 +854,8 @@
 
                         // WhatsApp button
                         const whatsappMessage = encodeURIComponent(`Halo admin, saya tertarik dengan produk: ${data.nama_produk} dengan harga Rp ${new Intl.NumberFormat('id-ID').format(data.harga)}`);
-                        document.getElementById('produkWhatsappBtn').href = `https://wa.me/6281234567890?text=${whatsappMessage}`;
-                        document.getElementById('produkBeliBtn').href = `https://wa.me/6281234567890?text=${whatsappMessage}`;
+                        
+                        document.getElementById('produkBeliBtn').href = `https://wa.me/6285694743168?text=${whatsappMessage}`;
 
                         // Show modal
                         modal.classList.remove('hidden');

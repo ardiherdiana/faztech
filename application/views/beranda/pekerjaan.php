@@ -59,11 +59,6 @@
                     <div class="text-3xl font-bold text-primary">100%</div>
                     <div class="text-sm text-gray-600">Kepuasan Klien</div>
                 </div>
-                <div class="w-px h-12 bg-gray-300"></div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-primary">5+</div>
-                    <div class="text-sm text-gray-600">Tahun Pengalaman</div>
-                </div>
             </div>
         </div>
     </div>
