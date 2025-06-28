@@ -221,7 +221,7 @@
             <div class="text-center mt-16" data-aos="fade-up" data-aos-delay="300">
                 <div class="inline-flex items-center bg-white px-6 py-3 rounded-xl shadow-md">
                     <i class="ri-check-line text-primary mr-2"></i>
-                    <span class="text-gray-700 font-medium">Menampilkan semua <?= count($testimoni) ?> testimoni</span>
+                    <span class="text-gray-700 font-medium">Menampilkan <?= count($testimoni) ?> testimoni</span>
                 </div>
             </div>
         <?php endif; ?>
